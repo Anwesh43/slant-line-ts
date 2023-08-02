@@ -45,21 +45,23 @@ export const useDimension = () => {
 }
 
 export const useStyle = (w : number, h : number, scale : number) => {
-    
+    const sf : number = Math.sin(Math.PI * scale)
     return {
-        parentStyle() : CSSProperties {
+        parentStyle(i : number) : CSSProperties {
             return {
                 left: `${w / 2}px`,
                 top: `${h / 2}px`,
-                position: 'absolute'
+                position: 'absolute',
+
+                transform: `rotate(${135 * i * sf}deg)`
             }
         },
-        blockStyle(i : number) : CSSProperties {
+        blockStyle() : CSSProperties {
             return {
                 position: 'absolute',
-                left: `0px`,
-                top: `0px`,
-                transform: `rotate(${-135 * i}deg)`,
+                left: `${-Math.min(w, h) / 10}px`,
+                top: `${-Math.min(w, h) / 60}px`,
+                background: 'indigo',
                 width: `${Math.min(w, h) / 10}px`,
                 height: `${Math.min(w, h) / 30}px`
             }

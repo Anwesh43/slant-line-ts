@@ -12,8 +12,8 @@ const SlantLine : React.FC<SlantLineProps> = (props : SlantLineProps) => {
     const {parentStyle, blockStyle} = useStyle(props.w, props.h, props.scale)
     return <>
         {[0,1].map((i : number) => (
-            <div key = {`line_${i}`} style = {parentStyle()} onClick = {() => props.onClick()}>
-                <div style = {blockStyle(i)}></div>
+            <div key = {`line_${i}`} style = {parentStyle(i)} onClick = {() => props.onClick()}>
+                <div style = {blockStyle()}></div>
             </div>
         ))}
     </>
