@@ -61,7 +61,7 @@ export const useStyle = (w : number, h : number, scale : number) => {
                 top: `0px`,
                 transform: `rotate(${-135 * i}deg)`,
                 width: `${Math.min(w, h) / 10}px`,
-                height: `${Math.min(w, h) / 90}px`
+                height: `${Math.min(w, h) / 30}px`
             }
         }
     }
